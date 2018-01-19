@@ -61,7 +61,7 @@ def set_timer(bot, update, args, job_queue, chat_data):
             return
 
         # Add job to queue
-        job = job_queue.run_repeating(alarm, interval=n, first=initial, context=chat_id)
+        job = job_queue.run_repeating(alarm, n, context=chat_id)
         chat_data['job'] = job
 
         update.message.reply_text('Timer successfully set!')
