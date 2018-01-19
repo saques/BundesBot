@@ -34,11 +34,11 @@ def get_seconds(tgt_s):
 
     current = datetime.now().replace(year=1900, day=1, month=1)
 
-    print current
+    print (current)
 
     tgt = datetime.strptime(tgt_s, '%H:%M:%S').replace(year=1900, day=1, month=1)
 
-    print tgt
+    print (tgt)
 
     if current > tgt:
         tgt = tgt.replace(day=2)
