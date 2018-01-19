@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cf2c5b3-9155-4376-bc06-38a5dbee3da6" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TimeTest.py" afterPath="$PROJECT_DIR$/BotTest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot.py" afterPath="$PROJECT_DIR$/bot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,15 +16,15 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/BundesbitakorenBot$bot.coverage" NAME="bot Coverage Results" MODIFIED="1516393740264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BundesbitakorenBot$Unittests_in_TimeTest_py.coverage" NAME="Unittests in TimeTest.py Coverage Results" MODIFIED="1516403049070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BundesbitakorenBot$Unittests_in_TimeTest_py.coverage" NAME="Unittests in BotTest.py Coverage Results" MODIFIED="1516405261981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="bot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="40" column="11" lean-forward="false" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+            <state relative-caret-position="272">
+              <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding>
                 <element signature="e#627#675#0" expanded="true" />
               </folding>
@@ -29,11 +32,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TimeTest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TimeTest.py">
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="51">
+              <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BotTest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BotTest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -45,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/Context.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+              <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -71,9 +84,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/Context.py" />
         <option value="$PROJECT_DIR$/TimeTest.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/BotTest.py" />
         <option value="$PROJECT_DIR$/bot.py" />
       </list>
     </option>
@@ -141,8 +155,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in TimeTest.py">
-    <configuration name="Unittests in TimeTest.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests in BotTest.py">
+    <configuration name="Unittests in BotTest.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -154,7 +168,7 @@
       <module name="BundesbitakorenBot" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/TimeTest.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/BotTest.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
     <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -177,11 +191,11 @@
     </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.bot" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TimeTest.py" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in BotTest.py" />
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TimeTest.py" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in BotTest.py" />
         <item index="1" class="java.lang.String" itemvalue="Python.bot" />
       </list>
     </recent_temporary>
@@ -200,35 +214,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_TimeTest_py - 2018.01.19 at 19h 40m 25s.xml">
-      <configuration name="Unittests in TimeTest.py" configurationId="tests" />
+    <history-entry file="Unittests_in_BotTest_py - 2018.01.19 at 20h 32m 50s.xml">
+      <configuration name="Unittests in BotTest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TimeTest_py - 2018.01.19 at 19h 41m 06s.xml">
-      <configuration name="Unittests in TimeTest.py" configurationId="tests" />
+    <history-entry file="Unittests_in_BotTest_py - 2018.01.19 at 20h 36m 09s.xml">
+      <configuration name="Unittests in BotTest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TimeTest_py - 2018.01.19 at 19h 43m 18s.xml">
-      <configuration name="Unittests in TimeTest.py" configurationId="tests" />
+    <history-entry file="Unittests_in_BotTest_py - 2018.01.19 at 20h 36m 44s.xml">
+      <configuration name="Unittests in BotTest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TimeTest_py - 2018.01.19 at 19h 43m 31s.xml">
-      <configuration name="Unittests in TimeTest.py" configurationId="tests" />
+    <history-entry file="Unittests_in_BotTest_py - 2018.01.19 at 20h 38m 47s.xml">
+      <configuration name="Unittests in BotTest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TimeTest_py - 2018.01.19 at 19h 44m 15s.xml">
-      <configuration name="Unittests in TimeTest.py" configurationId="tests" />
+    <history-entry file="Unittests_in_BotTest_py - 2018.01.19 at 20h 39m 23s.xml">
+      <configuration name="Unittests in BotTest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TimeTest_py - 2018.01.19 at 19h 45m 39s.xml">
-      <configuration name="Unittests in TimeTest.py" configurationId="tests" />
+    <history-entry file="Unittests_in_BotTest_py - 2018.01.19 at 20h 39m 51s.xml">
+      <configuration name="Unittests in BotTest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TimeTest_py - 2018.01.19 at 19h 48m 53s.xml">
-      <configuration name="Unittests in TimeTest.py" configurationId="tests" />
+    <history-entry file="Unittests_in_BotTest_py - 2018.01.19 at 20h 40m 06s.xml">
+      <configuration name="Unittests in BotTest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TimeTest_py - 2018.01.19 at 19h 49m 11s.xml">
-      <configuration name="Unittests in TimeTest.py" configurationId="tests" />
+    <history-entry file="Unittests_in_BotTest_py - 2018.01.19 at 20h 40m 36s.xml">
+      <configuration name="Unittests in BotTest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TimeTest_py - 2018.01.19 at 20h 01m 54s.xml">
-      <configuration name="Unittests in TimeTest.py" configurationId="tests" />
+    <history-entry file="Unittests_in_BotTest_py - 2018.01.19 at 20h 40m 47s.xml">
+      <configuration name="Unittests in BotTest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TimeTest_py - 2018.01.19 at 20h 04m 09s.xml">
-      <configuration name="Unittests in TimeTest.py" configurationId="tests" />
+    <history-entry file="Unittests_in_BotTest_py - 2018.01.19 at 20h 41m 02s.xml">
+      <configuration name="Unittests in BotTest.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -241,7 +255,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24312897" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40591967" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -267,14 +281,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -294,25 +300,33 @@
     <entry file="file://$PROJECT_DIR$/Context.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TimeTest.py">
+    <entry file="file://$PROJECT_DIR$/BotTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="341">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="40" column="11" lean-forward="false" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+        <state relative-caret-position="272">
+          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
             <element signature="e#627#675#0" expanded="true" />
           </folding>

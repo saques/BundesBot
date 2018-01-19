@@ -21,7 +21,10 @@ from datetime import datetime
 from num2words import num2words
 import logging
 import os
+import requests
 from Context import Context
+import random
+from bs4 import BeautifulSoup
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -30,31 +33,39 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 
+# +3 hs for NA
 def get_seconds(tgt_s):
-
     current = datetime.now().replace(year=1900, day=1, month=1)
-
-    print (current)
-
     tgt = datetime.strptime(tgt_s, '%H:%M:%S').replace(year=1900, day=1, month=1)
-
-    print (tgt)
-
     if current > tgt:
         tgt = tgt.replace(day=2)
-
     return (tgt-current).total_seconds()
+
+
+def get_text():
+    r = requests.get("http://www.dw.com/de")
+    body = r.text
+    soup = BeautifulSoup(body, "html.parser")
+    teasers = soup.findAll("div", {"class": "basicTeaser"})
+    teaser = teasers[random.randrange(len(teasers))]
+    return teaser.text
 
 
 # Define a few command handlers. These usually take the two arguments bot and
 # update. Error handlers also receive the raised TelegramError object in error.
 def start(bot, update):
-    update.message.reply_text('BOT AKTIVIERT')
+    update.message.reply_text('Hello! Use /set <time> <interval> <initial_count> to schedule random german texts!')
 
 
 def alarm(bot, job):
     """Send the alarm message."""
-    bot.send_message(job.context.chat_id, text="Bundesbitakor Nº %s" % num2words(job.context.n, lang='de'))
+
+    try:
+        text = get_text()
+    except:
+        text = "NEIN"
+
+    bot.send_message(job.context.chat_id, text="Bundesbitakor Nº %s \n %s" % (num2words(job.context.n, lang='de'), text))
     job.context.n += 1
 
 
@@ -70,7 +81,7 @@ def set_timer(bot, update, args, job_queue, chat_data):
         # args[1] should contain a positive integer indicating the interval between messages
         n = int(args[1])
         if n < 0:
-            update.message.reply_text('Sorry we can not go back to past!')
+            update.message.reply_text('Interval must be positive')
             return
 
         # Add job to queue

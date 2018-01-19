@@ -1,2 +1,4 @@
 python-telegram-bot
 num2words
+requests
+beautifulsoup4

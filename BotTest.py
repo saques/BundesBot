@@ -1,7 +1,10 @@
 import unittest
+import requests
+import random
 from datetime import datetime
+from bs4 import BeautifulSoup
 
-class TimeTest(unittest.TestCase):
+class BotTest(unittest.TestCase):
 
     FMT = '%H:%M:%S'
 
@@ -21,6 +24,7 @@ class TimeTest(unittest.TestCase):
             tgt = tgt.replace(day=2)
 
         self.assertEqual((tgt-current).total_seconds(), 82800)
+
 
 
 if __name__ == '__main__':
