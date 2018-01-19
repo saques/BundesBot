@@ -17,11 +17,10 @@ bot.
 
 
 from telegram.ext import Updater, CommandHandler
+from datetime import datetime
 from num2words import num2words
 import logging
 import os
-import datetime
-import time
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -50,10 +49,12 @@ def set_timer(bot, update, args, job_queue, chat_data):
         # args[1] should contain a positive integer indicating the interval between messages
         n = int(args[1])
 
-        current = datetime.datetime.now()
-        tgt = time.strptime(t, '%H:%M:%S')
+        current = datetime.now()
+        tgt = datetime.strptime(t, '%H:%M:%S')
 
         initial = (tgt - current).total_seconds()
+
+        update.message.reply_text('Usage: /set <time> <interval>')
 
         if n < 0:
             update.message.reply_text('Sorry we can not go back to past!')
