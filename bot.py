@@ -54,7 +54,7 @@ def set_timer(bot, update, args, job_queue, chat_data):
 
         initial = (tgt - current).total_seconds()
 
-        update.message.reply_text('Usage: /set <time> <interval>')
+        update.message.reply_text("interval: %d, first: %d" % (n, initial))
 
         if n < 0:
             update.message.reply_text('Sorry we can not go back to past!')
