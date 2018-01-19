@@ -50,8 +50,10 @@ def set_timer(bot, update, args, job_queue, chat_data):
         # args[1] should contain a positive integer indicating the interval between messages
         n = int(args[1])
 
-        x = time.strptime(t.split(',')[0], '%H:%M:%S')
-        initial = datetime.timedelta(hours=x.tm_hour, minutes=x.tm_min, seconds=x.tm_sec).total_seconds()
+        current = datetime.datetime.now()
+        tgt = time.strptime(t, '%H:%M:%S')
+
+        initial = (tgt - current).total_seconds()
 
         if n < 0:
             update.message.reply_text('Sorry we can not go back to past!')
