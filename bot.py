@@ -36,6 +36,7 @@ def get_seconds(tgt_s):
     tgt = datetime.strptime(tgt_s, '%H:%M:%S')
 
     if current > tgt:
+        logger.info("Entered if")
         tgt = tgt.replace(day=2)
 
     return (tgt-current).total_seconds()
