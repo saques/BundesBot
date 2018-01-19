@@ -18,9 +18,11 @@ bot.
 
 from telegram.ext import Updater, CommandHandler
 from datetime import datetime
+from datetime import timedelta
 from num2words import num2words
 import logging
 import os
+from Context import Context
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -37,7 +39,8 @@ def start(bot, update):
 
 def alarm(bot, job):
     """Send the alarm message."""
-    bot.send_message(job.context, text='Beep!')
+    bot.send_message(job.context.chat_id, text="Bundesbitakor Nº %s" % num2words(job.context.n, lang='de'))
+    job.context.n += 1
 
 
 def set_timer(bot, update, args, job_queue, chat_data):
@@ -54,20 +57,18 @@ def set_timer(bot, update, args, job_queue, chat_data):
 
         initial = (tgt - current).total_seconds()
 
-        update.message.reply_text("interval: %d, first: %d" % (n, initial))
-
         if n < 0:
             update.message.reply_text('Sorry we can not go back to past!')
             return
 
         # Add job to queue
-        job = job_queue.run_repeating(alarm, n, context=chat_id)
+        job = job_queue.run_repeating(alarm, n, context=Context(chat_id, 10))
         chat_data['job'] = job
 
         update.message.reply_text('Timer successfully set!')
 
     except (IndexError, ValueError):
-        update.message.reply_text('Usage: /set <time> <interval>')
+        update.message.reply_text('Usage: /set <time> <interval> <initial_count>')
 
 
 def unset(bot, update, chat_data):
