@@ -33,10 +33,14 @@ logger = logging.getLogger(__name__)
 def get_seconds(tgt_s):
 
     current = datetime.now().replace(year=1900, day=1, month=1)
+
+    print current
+
     tgt = datetime.strptime(tgt_s, '%H:%M:%S').replace(year=1900, day=1, month=1)
 
+    print tgt
+
     if current > tgt:
-        logger.info("Entered if")
         tgt = tgt.replace(day=2)
 
     return (tgt-current).total_seconds()
