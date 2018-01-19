@@ -60,6 +60,7 @@ def set_timer(bot, update, args, job_queue, chat_data):
         # args[0] should contain a valid time
 
         initial = get_seconds(args[0])
+        logger.info('Seconds diff "%d"', initial)
 
         # args[1] should contain a positive integer indicating the interval between messages
         n = int(args[1])
