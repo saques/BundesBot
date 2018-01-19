@@ -18,7 +18,6 @@ bot.
 
 from telegram.ext import Updater, CommandHandler
 from datetime import datetime
-from datetime import timedelta
 from num2words import num2words
 import logging
 import os
@@ -29,6 +28,17 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
+
+
+def get_seconds(tgt_s):
+
+    current = datetime.now().replace(year=1900, day=1, month=1)
+    tgt = datetime.strptime(tgt_s, '%H:%M:%S')
+
+    if current > tgt:
+        tgt = tgt.replace(day=2)
+
+    return (tgt-current).total_seconds()
 
 
 # Define a few command handlers. These usually take the two arguments bot and
@@ -48,27 +58,25 @@ def set_timer(bot, update, args, job_queue, chat_data):
     chat_id = update.message.chat_id
     try:
         # args[0] should contain a valid time
-        t = args[0]
+
+        initial = get_seconds(args[0])
+
         # args[1] should contain a positive integer indicating the interval between messages
         n = int(args[1])
-
-        current = datetime.now()
-        tgt = datetime.strptime(t, '%H:%M:%S')
-
-        initial = (tgt - current).total_seconds()
-
         if n < 0:
             update.message.reply_text('Sorry we can not go back to past!')
             return
 
         # Add job to queue
-        job = job_queue.run_repeating(alarm, n, context=Context(chat_id, 10))
+        job = job_queue.run_repeating(alarm, n, first=initial, context=Context(chat_id, int(args[2])))
         chat_data['job'] = job
 
         update.message.reply_text('Timer successfully set!')
 
     except (IndexError, ValueError):
         update.message.reply_text('Usage: /set <time> <interval> <initial_count>')
+
+
 
 
 def unset(bot, update, chat_data):
