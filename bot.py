@@ -15,9 +15,13 @@ Press Ctrl-C on the command line or send a signal to the process to stop the
 bot.
 """
 
+
 from telegram.ext import Updater, CommandHandler
+from num2words import num2words
 import logging
 import os
+import datetime
+import time
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -29,7 +33,7 @@ logger = logging.getLogger(__name__)
 # Define a few command handlers. These usually take the two arguments bot and
 # update. Error handlers also receive the raised TelegramError object in error.
 def start(bot, update):
-    update.message.reply_text('Hi! Use /set <seconds> to set a timer')
+    update.message.reply_text('BOT AKTIVIERT')
 
 
 def alarm(bot, job):
@@ -41,20 +45,26 @@ def set_timer(bot, update, args, job_queue, chat_data):
     """Add a job to the queue."""
     chat_id = update.message.chat_id
     try:
-        # args[0] should contain the time for the timer in seconds
-        due = int(args[0])
-        if due < 0:
-            update.message.reply_text('Sorry we can not go back to future!')
+        # args[0] should contain a valid time
+        t = args[0]
+        # args[1] should contain a positive integer indicating the interval between messages
+        n = int(args[1])
+
+        x = time.strptime(t.split(',')[0], '%H:%M:%S')
+        initial = datetime.timedelta(hours=x.tm_hour, minutes=x.tm_min, seconds=x.tm_sec).total_seconds()
+
+        if n < 0:
+            update.message.reply_text('Sorry we can not go back to past!')
             return
 
         # Add job to queue
-        job = job_queue.run_once(alarm, due, context=chat_id)
+        job = job_queue.run_repeating(alarm, interval=next, first=initial, context=chat_id)
         chat_data['job'] = job
 
         update.message.reply_text('Timer successfully set!')
 
     except (IndexError, ValueError):
-        update.message.reply_text('Usage: /set <seconds>')
+        update.message.reply_text('Usage: /set <time> <interval>')
 
 
 def unset(bot, update, chat_data):
