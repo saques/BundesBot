@@ -72,6 +72,11 @@ def alarm(bot, job):
 def set_timer(bot, update, args, job_queue, chat_data):
     """Add a job to the queue."""
     chat_id = update.message.chat_id
+
+    if chat_id in chat_data:
+        update.message.reply_text('You already have an active timer. Use /unset to remove.')
+        return
+
     try:
         # args[0] should contain a valid time
 
@@ -86,7 +91,7 @@ def set_timer(bot, update, args, job_queue, chat_data):
 
         # Add job to queue
         job = job_queue.run_repeating(alarm, n, first=initial, context=Context(chat_id, int(args[2])))
-        chat_data['job'] = job
+        chat_data[chat_id] = job
 
         update.message.reply_text('Timer successfully set!')
 
@@ -98,13 +103,16 @@ def set_timer(bot, update, args, job_queue, chat_data):
 
 def unset(bot, update, chat_data):
     """Remove the job if the user changed their mind."""
-    if 'job' not in chat_data:
+
+    chat_id = update.message.chat_id
+
+    if chat_id not in chat_data:
         update.message.reply_text('You have no active timer')
         return
 
-    job = chat_data['job']
+    job = chat_data[chat_id]
     job.schedule_removal()
-    del chat_data['job']
+    del chat_data[chat_id]
 
     update.message.reply_text('Timer successfully unset!')
 
